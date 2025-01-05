@@ -1,0 +1,30 @@
+name: CI Test
+
+on:
+  push:
+    branches:
+      - main  # Run workflow only for 'main' branch
+  pull_request:  # Also run tests for pull requests targeting 'main'
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: .
+      
+
+    - name: Run tests
+      run: npm test
