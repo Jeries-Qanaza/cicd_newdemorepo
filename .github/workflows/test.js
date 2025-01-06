@@ -15,3 +15,7 @@ test('adds 0 + 0 to equal 0', () => {
 test('adds 0 + 0 to equal 0', () => {
   expect(add(4, 0)).toBe(4);
 });
+
+test('adds 0 + 0 to equal 0', () => {
+  expect(add(4, 0)).toBe(6);
+});
